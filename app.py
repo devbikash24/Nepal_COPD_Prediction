@@ -3,6 +3,9 @@ import pickle
 import streamlit as st
 import os
 
+# Set custom page configuration
+st.set_page_config(page_title="COPD Prediction Dashboard", page_icon="🫁", layout="wide")
+
 # Define the base path to locate model files
 base_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -20,8 +23,7 @@ try:
 except FileNotFoundError as e:
     st.error(f"Error: {e}")
 
-# Set custom page configuration
-st.set_page_config(page_title="COPD Prediction Dashboard", page_icon="🫁", layout="wide")
+
 
 # Custom CSS to enhance the appearance
 st.markdown(
