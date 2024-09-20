@@ -1,13 +1,23 @@
 import pandas as pd
 import pickle
 import streamlit as st
+import os
+
+base_path = os.path.dirname(os.path.abspath(__file__))
 
 # Load models
-with open(r'models\pipe.pkl', 'rb') as f:
-    pipe = pickle.load(f)
+pipe_path = os.path.join(base_path, 'models', 'pipe.pkl')
+model_path = os.path.join(base_path, 'models', 'Best_Random_Forest_Model.pkl')
 
-with open(r'models\Best_Random_Forest_Model.pkl', 'rb') as f:
-    model = pickle.load(f)
+try:
+    with open(pipe_path, 'rb') as f:
+        pipe = pickle.load(f)
+
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
+
+except FileNotFoundError as e:
+    st.error(f"Error: {e}")
 
 # Set custom page configuration
 st.set_page_config(page_title="COPD Prediction Dashboard", page_icon="🫁", layout="wide")
