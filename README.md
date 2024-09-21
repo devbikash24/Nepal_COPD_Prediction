@@ -2,6 +2,7 @@
 
 Welcome to the **COPD Prediction Dashboard**! This interactive tool predicts the likelihood of Chronic Obstructive Pulmonary Disease (COPD) based on various risk factors. The application uses a trained Random Forest model with a user-friendly interface built using Streamlit.
 
+Live Demo: https://nepalcopd.streamlit.app/
 ## 🌟 Features
 
 - **Interactive Inputs**: Customize your inputs using checkboxes, radio buttons, sliders, and text fields to personalize your predictions.
